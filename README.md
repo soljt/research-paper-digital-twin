@@ -61,7 +61,7 @@ This repository provides tools and scripts for creating and interacting with a r
 ### Installation
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/soljt/research-paper-digital-twin.git
 cd politicians-digital-twins
 ```
 
@@ -81,12 +81,12 @@ pip install -r requirements.txt
 ### Running Scripts
 All scripts should be executed from the root directory of the repository to ensure file paths are correctly resolved. For example:
 ```bash
-python kb/process_papers.py
+python kb/chat_history.py
 ```
 
 ## Workflow
 1. Create Knowledge Base:
   - Place papers in `kb/pdfs/`
-  - Use the provided scripts in `kb/` to create the knowledge base (see `kb/` [Usage](#1-kb) above)
+  - Use the provided scripts in `kb/` to create the knowledge base (see [`kb/`](#1-kb) above)
 2. Interact with the digital twin:
   - Use the scripts in [`main_chain/`](#2-main_chain) to interact via the console
