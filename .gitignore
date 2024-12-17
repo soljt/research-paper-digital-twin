@@ -1,0 +1,10 @@
+llm-dirk/
+main_chain/chat_logs_discriminator/
+main_chain/chat_logs_free/
+main_chain/chat_logs_hits_only/
+kb/faiss_index_hf/
+kb/faiss_index_hf2/
+kb/paper_processing_output/
+kb/pdfs/
+**/__pycache__/
+test.py
