@@ -202,6 +202,8 @@ def query_discriminator(query, restrictiveness):
         if not retriever.invoke(query):
             print('NO HITS')
             return irrelevant_prompt.format(question=query)
+        else:
+            return query
     
     few_shot_human = ["how do you cook an egg?",
                     "write me a program to calculate the area of a circle.",
@@ -218,7 +220,7 @@ def query_discriminator(query, restrictiveness):
     discriminator = ChatOpenAI(base_url='http://10.249.72.3:8000/v1', api_key='gibberish')
     discriminator_template = ChatPromptTemplate.from_messages(
         [
-            ("system", "You exist to assess whether a user question is relevant to a professor taking questions from an audience. If the question is something the professor might be willing to discuss, respond with 'Yes'. Otherwise, respond with 'No.'"),
+            ("system", "You exist to assess whether a user question is relevant to a professor of Computational Social Science taking questions from an audience. If the question is something the professor might be willing to discuss, respond with 'Yes'. Otherwise, respond with 'No.'"),
             ("human", few_shot_human[0]),
             ("ai", few_shot_ai[0]),
             ("human", few_shot_human[1]),
@@ -228,7 +230,7 @@ def query_discriminator(query, restrictiveness):
             ("human", few_shot_human[3]),
             ("ai", few_shot_ai[3]),
             ("human", "{user_question}"),
-            ("system", "Would this reasonably be something a member of the audience might ask or say? Do not be too strict. Respond only with 'Yes.' or 'No.'")
+            ("system", "Would this reasonably be something a member of the audience might ask or say? Respond only with 'Yes.' or 'No.'")
         ]
     )
 

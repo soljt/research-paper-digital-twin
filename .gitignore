@@ -8,3 +8,5 @@ kb/paper_processing_output/
 kb/pdfs/
 **/__pycache__/
 test.py
+sample_output/
+example_prompts.txt
